@@ -2,12 +2,15 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Home from './pages/Home';
 import InjectionIntro from './pages/InjectionIntro';
-import LoginBypass from './pages/LoginBypass';
+import LoginBypass from './pages/1.LoginBypass';
 import Topbar from './components/Topbar';
 import Track from './pages/Track';
 import QuerySimulator from './pages/QuerySimulator';
-import UnionInjection from './pages/UnionInjection';
-import InformationSchema from './pages/information_schema';
+import UnionInjection from './pages/2.UnionInjection';
+import InformationSchema from './pages/3.information_schema';
+import CaseBypassLesson from './pages/4.CaseBypassLesson';
+import LoginSimulatorPage from './pages/1.LoginSimulatorPage';
+import UnionSimulatorPage  from './pages/2.LoginBoxUnion';
 
 function App() {
   return (
@@ -34,7 +37,10 @@ function App() {
             <Route path="/track" element={<Track />} />
             <Route path="/query-simulate" element={<QuerySimulator />} />
             <Route path="/union-injection" element={<UnionInjection />} />
+            <Route path="/case-bypass" element={<CaseBypassLesson />} />
             <Route path="/information-schema" element={<InformationSchema />} />
+            <Route path="/login-simulator" element={<LoginSimulatorPage />} />
+            <Route path="/union-simulator" element={<UnionSimulatorPage />} />
           </Routes>
         </div>
       </div>

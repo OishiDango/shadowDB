@@ -8,10 +8,15 @@ const QuerySimulator = () => {
   const [generatedSQL, setGeneratedSQL] = useState("");
 
   useEffect(() => {
-    const lines = payloads.split("\n");
-    const result = lines.map(line => template.replace(/\$1/g, line)).join("\n");
-    setGeneratedSQL(result);
+    const parts = payloads.trim().split("\n").map(s => s.trim()).filter(Boolean);
+    let sql = template;
+    for (let i = 0; i < parts.length; i++) {
+      const regex = new RegExp(`\\$${i + 1}`, 'g');
+      sql = sql.replace(regex, parts[i]);
+    }
+    setGeneratedSQL(sql);
   }, [template, payloads]);
+
 
   return (
     <div>

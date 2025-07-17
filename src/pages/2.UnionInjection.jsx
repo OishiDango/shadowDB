@@ -8,6 +8,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import FlagInput from '../components/FlagInput';
+import { Link } from 'react-router-dom';
 
 const UnionInjection = () => {
 
@@ -21,7 +22,7 @@ const UnionInjection = () => {
           This allows attackers to retrieve data from other tables — even if the original query wasn't meant to show it.
         </p>
 
-        <h2 className="text-2xl font-semibold mb-2">💡 Syntax:</h2>
+        <h2 className="text-2xl font-semibold mb-2">💡 Syntax</h2>
         <p className="mb-2">To obtain data from a specific column in the table:</p>
         <SyntaxHighlighter language="sql" style={vscDarkPlus}>
           {'\' UNION SELECT username, password FROM users --'}
@@ -94,10 +95,13 @@ UNION SELECT username, password FROM users --';`}
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">🧪 SQLi Exercise</h2>
         <p className="text-base mb-4">Try to extract <strong>username and password</strong> data from the <code>users</code> table in this Wargame and login to the account:</p>
-        <button className="bg-blue-600 text-white font-bold px-4 py-2 rounded">
-          Try it Yourself
-        </button>
+        <Link to="/union-simulator">
+          <button className="bg-blue-600 text-white font-bold px-4 py-2 rounded">
+            Try it Yourself
+          </button>
+        </Link>
       </section>
+
 
       <section className="mt-8">
         <h2 className="text-2xl font-semibold mb-4">🏁 Submit Your Flag</h2>

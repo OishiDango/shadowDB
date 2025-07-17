@@ -8,6 +8,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import FlagInput from '../components/FlagInput';
+import { Link } from 'react-router-dom';
 
 const LoginBypass = () => {
 
@@ -20,7 +21,7 @@ const LoginBypass = () => {
           SQL injection can be used to bypass login forms by injecting code that changes the logic of the SQL query.
         </p>
 
-        <h2 className="text-2xl font-semibold mb-2">💡 Syntax:</h2>
+        <h2 className="text-2xl font-semibold mb-2">💡 Syntax</h2>
         <p className="mb-2">To bypass the login:</p>
         <SyntaxHighlighter language="sql" style={vscDarkPlus} wrapLines={true}>
           {'\' OR 1=1 --'}
@@ -85,16 +86,18 @@ const LoginBypass = () => {
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">🎮 SQLi Exercises</h2>
         <p className="text-base mb-4">Try to bypass the login and gain the flag in the following wargame:</p>
-        <button className="bg-blue-600 text-white font-bold px-4 py-2 rounded">
-          Try it Yourself
-        </button>
+        <Link to="/login-simulator">
+          <button className="bg-blue-600 text-white font-bold px-4 py-2 rounded">
+            Try it Yourself
+          </button>
+        </Link>
         <p className="mt-2 text-sm text-gray-600">Click on "Try it Yourself" button to access the wargame.</p>
       </section>
 
       <section className="mt-8">
         <h2 className="text-2xl font-semibold mb-4">🏁 Submit Your Flag</h2>
         <p className="text-base mb-2">If you successfully bypassed the login and captured the flag, enter it below:</p>
-        <FlagInput expectedFlag="flag{union_success}" />
+        <FlagInput correctFlag="flag{COPY_THIS_FLAG_INCLUDE_BRACKETS}" />
       </section>
     </div>
   );

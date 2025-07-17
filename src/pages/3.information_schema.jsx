@@ -22,7 +22,7 @@ const InformationSchemaLesson = () => {
         </p>
 
 
-        <h2 className="text-xl font-semibold mb-2">💡 Syntax:</h2>
+        <h2 className="text-xl font-semibold mb-2">💡 Syntax</h2>
         <p className="mt-2">To list all the tables in the current database:</p>
         <SyntaxHighlighter language="sql" style={vscDarkPlus} wrapLines={true}>
           {`SELECT table_name FROM information_schema.tables WHERE table_schema = 'database_name';`}

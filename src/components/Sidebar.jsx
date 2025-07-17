@@ -36,8 +36,9 @@ const Sidebar = () => {
         <Link to="/login-bypass" style={linkStyle('/login-bypass')}>iSQL Login By Pass</Link>
         <Link to="/union-injection" style={linkStyle('/union-injection')}>iSQL UNION</Link>
         <Link to="/information-schema" style={linkStyle('/information-schema')}>iSQL Info Scheme</Link>
+        <Link to="/case-bypass" style={linkStyle('/case-bypass')}>iSQL Filter Bypass</Link>
         <Link to="/query-simulate" style={linkStyle('/query-simulate')}>Query Simulator</Link>
-       
+        
         
       </nav>
     </div>
