@@ -140,6 +140,21 @@ def get_secrets():
         conn.close()
 
     return {"secrets": secrets}
+    
+
+@app.route('/ping-db')
+def ping_db():
+    try:
+        conn = get_connection()
+        cur = conn.cursor()
+        cur.execute("SELECT 1;")
+        result = cur.fetchone()
+        cur.close()
+        conn.close()
+        return {"message": "Database connected!", "result": result[0]}
+    except Exception as e:
+        return {"error": str(e)}, 500
+
 
 
 if __name__ == '__main__':
