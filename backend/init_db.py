@@ -1,22 +1,16 @@
-from db import get_connection
+import psycopg2
+import os
 
-def run_sql_file():
-    with open("init.sql", "r", encoding="utf-8") as f:
-        sql = f.read()
+DATABASE_URL = os.environ.get("DATABASE_URL")  # Render 上设置的环境变量
 
-    conn = get_connection()
-    cur = conn.cursor()
+conn = psycopg2.connect(DATABASE_URL)
+cur = conn.cursor()
 
-    # 避免多语句报错：一条条执行（按分号切分）
-    for statement in sql.split(';'):
-        stmt = statement.strip()
-        if stmt:
-            cur.execute(stmt + ';')
+with open("init.sql", encoding="utf-8") as f:
+    cur.execute(f.read())
 
-    conn.commit()
-    cur.close()
-    conn.close()
-    print("✅ 数据库初始化完成！")
+conn.commit()
+cur.close()
+conn.close()
 
-if __name__ == "__main__":
-    run_sql_file()
+print("✅ Database initialized.")

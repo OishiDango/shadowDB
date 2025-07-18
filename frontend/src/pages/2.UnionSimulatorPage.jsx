@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import HintBar from "../components/HintBar";
+import BACKEND_URL from "../config"; // 引入配置文件中的后端地址
 
 const UnionSimulatorPage = () => {
   const [username, setUsername] = useState('');
@@ -8,6 +9,7 @@ const UnionSimulatorPage = () => {
   const [flagText, setFlagText] = useState('');
   const [actualUser, setActualUser] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
+  
 
   const handleLogin = async () => {
     if (!username || !password) {
@@ -16,7 +18,7 @@ const UnionSimulatorPage = () => {
     }
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/api/union-login", {
+      const response = await fetch(`${BACKEND_URL}/api/union-login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
