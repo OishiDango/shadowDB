@@ -3,6 +3,7 @@ DROP TABLE IF EXISTS feedback;
 DROP TABLE IF EXISTS hidden_users;
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS flags;
+DROP TABLE IF EXISTS session_data;
 
 -- 创建 feedback 表
 CREATE TABLE feedback (

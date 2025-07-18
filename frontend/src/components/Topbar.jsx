@@ -22,7 +22,7 @@ const Topbar = () => {
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <Link to="/">
           <img
-            src="/shadowdb-logo.png"
+            src="./shadowdb-logo.png"
             alt="Shadow DB Logo"
             style={{
               height: '48px',
