@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BACKEND_URL } from "../config";
 
 const CaseBypassPage = () => {
   const [sessionId, setSessionId] = useState("");
