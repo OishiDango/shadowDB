@@ -8,6 +8,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import FlagInput from '../components/FlagInput';
+import { Link } from 'react-router-dom';
 
 const InformationSchemaLesson = () => {
   return (
@@ -112,15 +113,19 @@ const InformationSchemaLesson = () => {
           <li>List all columns inside that table</li>
           <li>Obtain the information you need to login to the account</li>
         </ol>
-        <button className="bg-blue-600 text-white font-bold px-4 py-2 rounded">
-          Try it Yourself
-        </button>
+        <Link to="/information-simulator">
+          <button className="bg-blue-600 text-white font-bold px-4 py-2 rounded">
+            Try it Yourself
+          </button>
+        </Link>
+
+
       </section>
 
       <section className="mt-8">
         <h2 className="text-xl font-semibold mb-2">🏁 Submit Your Flag</h2>
         <p className="text-base mb-2">If you successfully log in using the discovered account, enter the flag below:</p>
-        <FlagInput correctFlag="flag{example_flag_info_schema}" />
+        <FlagInput correctFlag="flag{Well_Done_You_Found_The_Flag!}" />
       </section>
     </div>
   );

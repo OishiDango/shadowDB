@@ -8,6 +8,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import FlagInput from '../components/FlagInput';
+import { Link } from 'react-router-dom';
 
 const CaseBypassLesson = () => {
   return (
@@ -92,10 +93,13 @@ const CaseBypassLesson = () => {
         <h2 className="text-xl font-semibold mb-2">🧪 SQLi Exercise</h2>
         <p>Try to bypass the filter by changing the casing of keywords:
         <br />
-        There is a table called <code>account_data</code> with columns <code>user_login</code> and <code>pass_key</code>.</p>
-        <button className="bg-blue-600 text-white font-bold px-4 py-2 rounded mt-2">
-          Try it Yourself
-        </button>
+        I hide my flag in the secret inside my session_table.</p>
+        <Link to="/bypass-simulator">
+          <button className="bg-purple-600 text-white font-bold px-4 py-2 rounded">
+            Try Case Bypass
+          </button>
+        </Link>
+
       </section>
 
       <section className="mt-8">

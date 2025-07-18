@@ -10,7 +10,9 @@ import UnionInjection from './pages/2.UnionInjection';
 import InformationSchema from './pages/3.information_schema';
 import CaseBypassLesson from './pages/4.CaseBypassLesson';
 import LoginSimulatorPage from './pages/1.LoginSimulatorPage';
-import UnionSimulatorPage  from './pages/2.LoginBoxUnion';
+import UnionSimulatorPage  from './pages/2.UnionSimulatorPage';
+import InformationSimulatorPage from './pages/3.informationSimulatorPage';
+import CaseBypassPage from './pages/4.CaseBypassPage';
 
 function App() {
   return (
@@ -41,6 +43,8 @@ function App() {
             <Route path="/information-schema" element={<InformationSchema />} />
             <Route path="/login-simulator" element={<LoginSimulatorPage />} />
             <Route path="/union-simulator" element={<UnionSimulatorPage />} />
+            <Route path="/information-simulator" element={<InformationSimulatorPage />} />
+            <Route path="/bypass-simulator" element={<CaseBypassPage />} />
           </Routes>
         </div>
       </div>

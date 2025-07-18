@@ -4,33 +4,47 @@ const LoginBox = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [loginStatus, setLoginStatus] = useState('');
+  const [flagText, setFlagText] = useState('');
   const flag = 'flag{COPY_THIS_FLAG_INCLUDE_BRACKETS}';
 
-  const handleLogin = () => {
-    const sql = `SELECT * FROM users WHERE username = '${username}' AND password = '${password}'`;
+  const handleLogin = async () => {
 
-    
+  if (!username || !password) {
+    setLoginStatus("missing");
+    return;
+  }
 
-    if (/or\s+1\s*=\s*1/i.test(sql) || /'1'='1'/i.test(sql)) {
-      setLoginStatus('success');
+  try {
+    const response = await fetch("http://127.0.0.1:5000/api/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ username, password })
+    });
+
+    const result = await response.json();
+
+    if (response.ok && result.flag) {
+      setLoginStatus("success");
+      setFlagText(result.flag);
     } else {
-      setLoginStatus('fail');
+      setLoginStatus("fail");
     }
-  };
+  } catch (error) {
+    console.error("Login error:", error);
+    setLoginStatus("fail");
+  }
+};
 
-  const handleLogout = () => {
-    setUsername('');
-    setPassword('');
-    setLoginStatus('');
-  };
 
   return (
     <div style={styles.background}>
       {loginStatus === 'success' ? (
-        <div style={styles.successBox}>
+         <div style={styles.successBox}>
           <h2 style={styles.welcome}>Welcome admin</h2>
-          <p style={styles.flag}>{flag}</p>
-          <a onClick={handleLogout} style={styles.logout}>Logout</a>
+          <p style={styles.flag}>{flagText}</p>
+          <a onClick={() => setLoginStatus('')} style={styles.logout}>Logout</a>
         </div>
       ) : (
         <div style={styles.card}>
@@ -52,7 +66,11 @@ const LoginBox = () => {
           <button style={styles.button} onClick={handleLogin}>
             Login
           </button>
-
+          {loginStatus === 'missing' && (
+            <div style={{ marginTop: "20px", color: "orange", fontWeight: "bold" }}>
+              ⚠️ Please enter username and password
+            </div>
+          )}
           {loginStatus === 'fail' && (
             <div style={{ marginTop: "20px", color: "red", fontWeight: "bold" }}>
               ❌ Login failed
@@ -67,7 +85,6 @@ const LoginBox = () => {
 const styles = {
   background: {
     height: "100vh",
-
     display: "flex",
     justifyContent: "center",
     alignItems: "center",

@@ -36,9 +36,8 @@ const Topbar = () => {
 
       {/* 中間導覽選單 */}
       <div style={{ display: 'flex', gap: '20px', fontWeight: 'bold' }}>
-        <Link to="/" style={{ color: '#222' }}>首頁</Link>
-        <Link to="/intro" style={{ color: '#222' }}>iSQL 教學</Link>
-        <Link to="/track" style={{ color: '#222' }}>進度追蹤</Link>
+        <Link to="/" style={{ color: '#222' }}>MainPage</Link>
+        <Link to="/intro" style={{ color: '#222' }}>iSQL Tutorial</Link>
       </div>
 
       {/* 右側按鈕 */}
@@ -53,7 +52,7 @@ const Topbar = () => {
             fontWeight: 'bold',
           }}
         >
-          登入
+          Login
         </button>
       </div>
     </div>

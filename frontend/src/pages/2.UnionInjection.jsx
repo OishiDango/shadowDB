@@ -33,7 +33,7 @@ const UnionInjection = () => {
         <h2 className="text-2xl font-semibold mb-2">🔍 Injected Example</h2>
         <p className="mb-2">A normal query might look like this:</p>
         <SyntaxHighlighter language="sql" style={vscDarkPlus}>
-          {"SELECT id, comment FROM feedback WHERE comment = '$input';"}
+          {"SELECT * FROM users WHERE username = '$username' AND password = '$password';"}
         </SyntaxHighlighter>
 
         <p className="mt-4 mb-2">Below is an example table from the database:</p>
@@ -94,7 +94,7 @@ UNION SELECT username, password FROM users --';`}
 
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">🧪 SQLi Exercise</h2>
-        <p className="text-base mb-4">Try to extract <strong>username and password</strong> data from the <code>users</code> table in this Wargame and login to the account:</p>
+        <p className="text-base mb-4">Try to extract the <strong>flag</strong> column from the <strong>flags</strong> table using a UNION-based SQL injection.</p>
         <Link to="/union-simulator">
           <button className="bg-blue-600 text-white font-bold px-4 py-2 rounded">
             Try it Yourself
@@ -106,7 +106,7 @@ UNION SELECT username, password FROM users --';`}
       <section className="mt-8">
         <h2 className="text-2xl font-semibold mb-4">🏁 Submit Your Flag</h2>
         <p className="text-base mb-2">If you successfully log in using the discovered account, you will receive the flag:</p>
-        <FlagInput expectedFlag="flag{union_success}" />
+        <FlagInput expectedFlag="flag{You_found_the_flag_with_union!}" />
       </section>
     </div>
   );
