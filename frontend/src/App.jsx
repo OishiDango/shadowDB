@@ -18,6 +18,7 @@ import ErrorBasedLesson from './pages/6.ErrorBasedLesson.jsx';
 import TimeBasedLesson from './pages/7.TimeBasedLesson.jsx';
 import SQLDefensePage from './pages/8.Defence.jsx';
 import ErrorBasedSimulator from './pages/6.ErrorBasedSimulator.jsx';
+import TimeBasedSimulator from './pages/7.TimeBasedSimulator.jsx';
 
 function App() {
   return (
@@ -56,6 +57,7 @@ function App() {
             <Route path="/blind/time-based" element={<TimeBasedLesson />} />
             <Route path="/sql-defense" element={<SQLDefensePage />} />
             <Route path="/blind/error-based-simulator" element={<ErrorBasedSimulator />} />
+            <Route path="/time-based-simulator" element={<TimeBasedSimulator />} />
           </Routes>
         </div>
       </div>

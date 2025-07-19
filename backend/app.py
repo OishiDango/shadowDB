@@ -144,7 +144,7 @@ def get_secrets():
 
 @app.route('/ping-db')
 def ping_db():
-    try:
+    try:    
         conn = get_connection()
         cur = conn.cursor()
         cur.execute("SELECT 1;")
@@ -154,6 +154,7 @@ def ping_db():
         return {"message": "Database connected!", "result": result[0]}
     except Exception as e:
         return {"error": str(e)}, 500
+
 
 @app.route('/api/blind-error-login', methods=['POST'])
 def blind_error_login():
@@ -167,8 +168,8 @@ def blind_error_login():
     cur = conn.cursor()
 
     try:
-        # 故意易受注入攻击
         query = f"SELECT * FROM blind_data WHERE session_id = '{injected}'"
+
         cur.execute(query)
         result = cur.fetchone()
     except Exception as e:
@@ -180,12 +181,55 @@ def blind_error_login():
     if result:
         return {
             "message": "Success!",
-            "flag": result[1]
+            "flag": result[2]
         }
     else:
         return {
             "message": "No result"
         }, 404
+
+
+@app.route("/api/blind-time-login", methods=["POST"])
+def blind_time_login():
+    data = request.get_json()
+    injected = data.get("session", "")
+
+    if not injected:
+        return jsonify({"error": "Missing session value"}), 400
+
+    try:
+        conn = get_connection()
+        cur = conn.cursor()
+
+        # 🛡️ 用拼接方式模拟注入（仅用于教学！请勿用于真实环境）
+        query = f"""
+        SELECT CASE
+            WHEN EXISTS (
+                SELECT 1 FROM blind_data WHERE id = 1 AND session_id = '{injected}'
+            )
+            THEN pg_sleep(3)
+            ELSE NULL
+        END;
+        """
+
+        start = time.time()
+        cur.execute(query)
+        conn.commit()
+        end = time.time()
+
+        elapsed = round(end - start, 3)
+
+        if elapsed >= 3:
+            return jsonify({"message": "Condition is TRUE (delay triggered)", "flag": "flag{YOU_DELAYED_IT}"})
+        else:
+            return jsonify({"message": "Condition is FALSE (no delay)"})
+
+    except Exception as e:
+        return jsonify({"error": str(e)})
+    finally:
+        if conn:
+            cur.close()
+            conn.close()
 
 
 if __name__ == '__main__':

@@ -4,6 +4,7 @@ DROP TABLE IF EXISTS hidden_users;
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS flags;
 DROP TABLE IF EXISTS session_data;
+DROP TABLE IF EXISTS blind_data;
 
 -- 创建 feedback 表
 CREATE TABLE feedback (
@@ -34,7 +35,8 @@ CREATE TABLE session_data (
 );
 
 CREATE TABLE blind_data (
-  session_id TEXT PRIMARY KEY,,
+  id SERIAL PRIMARY KEY,
+  session_id TEXT NOT NULL,
   data TEXT NOT NULL
 );
 
@@ -60,5 +62,6 @@ INSERT INTO session_data VALUES
   ('admin_session', 'flag{case_insensitive_bypass}');
 
 
-INSERT INTO blind_data (session_id, data) VALUES
-  ('abcd', 'flag{You_found_the_flag_with_blind!}'),
+INSERT INTO blind_data (id, session_id, data) VALUES
+  (1,'abcd', 'flag{You_found_the_flag_with_blind!}'),
+  (2,'efgh', 'flag{You_found_the_flag_with_error_based!}');
