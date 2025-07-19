@@ -33,6 +33,10 @@ CREATE TABLE session_data (
   secret TEXT
 );
 
+CREATE TABLE blind_data (
+  session_id TEXT PRIMARY KEY,,
+  data TEXT NOT NULL
+);
 
 -- 插入 users 数据
 INSERT INTO users (username, password) VALUES
@@ -54,3 +58,7 @@ INSERT INTO flags (flag) VALUES
 INSERT INTO session_data VALUES
   ('abc123', 'The cake is a lie.'),
   ('admin_session', 'flag{case_insensitive_bypass}');
+
+
+INSERT INTO blind_data (session_id, data) VALUES
+  ('abcd', 'flag{You_found_the_flag_with_blind!}'),

@@ -13,6 +13,11 @@ import LoginSimulatorPage from './pages/1.LoginSimulatorPage';
 import UnionSimulatorPage  from './pages/2.UnionSimulatorPage';
 import InformationSimulatorPage from './pages/3.informationSimulatorPage';
 import CaseBypassPage from './pages/4.CaseBypassPage';
+import BlindIntroLesson from './pages/5.BlindIntro.jsx';
+import ErrorBasedLesson from './pages/6.ErrorBasedLesson.jsx';
+import TimeBasedLesson from './pages/7.TimeBasedLesson.jsx';
+import SQLDefensePage from './pages/8.Defence.jsx';
+import ErrorBasedSimulator from './pages/6.ErrorBasedSimulator.jsx';
 
 function App() {
   return (
@@ -34,6 +39,7 @@ function App() {
         }}>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/shadowDB" element={<Home />} />
             <Route path="/intro" element={<InjectionIntro />} />
             <Route path="/login-bypass" element={<LoginBypass />} />
             <Route path="/track" element={<Track />} />
@@ -45,6 +51,11 @@ function App() {
             <Route path="/union-simulator" element={<UnionSimulatorPage />} />
             <Route path="/information-simulator" element={<InformationSimulatorPage />} />
             <Route path="/bypass-simulator" element={<CaseBypassPage />} />
+            <Route path="/blind-intro" element={<BlindIntroLesson />} />
+            <Route path="/blind/error-based" element={<ErrorBasedLesson />} />
+            <Route path="/blind/time-based" element={<TimeBasedLesson />} />
+            <Route path="/sql-defense" element={<SQLDefensePage />} />
+            <Route path="/blind/error-based-simulator" element={<ErrorBasedSimulator />} />
           </Routes>
         </div>
       </div>

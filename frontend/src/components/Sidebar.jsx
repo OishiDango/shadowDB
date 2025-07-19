@@ -33,13 +33,15 @@ const Sidebar = () => {
       <nav>
         <Link to="/" style={linkStyle('/')}>iSQL Home</Link>
         <Link to="/intro" style={linkStyle('/intro')}>iSQL Intro</Link>
+        <Link to="/query-simulate" style={linkStyle('/query-simulate')}>Query Simulator</Link>
         <Link to="/login-bypass" style={linkStyle('/login-bypass')}>iSQL Login By Pass</Link>
         <Link to="/union-injection" style={linkStyle('/union-injection')}>iSQL UNION</Link>
         <Link to="/information-schema" style={linkStyle('/information-schema')}>iSQL Info Scheme</Link>
         <Link to="/case-bypass" style={linkStyle('/case-bypass')}>iSQL Filter Bypass</Link>
-        <Link to="/query-simulate" style={linkStyle('/query-simulate')}>Query Simulator</Link>
-        
-        
+        <Link to="/blind-intro" style={linkStyle('/blind-intro')}>Blind SQLi Introduction</Link>
+        <Link to="/blind/error-based" style={linkStyle('/blind/error-based')}>iSQL Error-based</Link>
+        <Link to="/blind/time-based" style={linkStyle('/blind/time-based')}>iSQL Time-based </Link>
+        <Link to="/sql-defense" style={linkStyle('/sql-defense')}>iSQL Defense</Link>
       </nav>
     </div>
   );

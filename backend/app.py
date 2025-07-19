@@ -155,6 +155,37 @@ def ping_db():
     except Exception as e:
         return {"error": str(e)}, 500
 
+@app.route('/api/blind-error-login', methods=['POST'])
+def blind_error_login():
+    data = request.get_json()
+    injected = data.get("session")
+
+    if not injected:
+        return {"error": "Missing session value"}, 400
+
+    conn = get_connection()
+    cur = conn.cursor()
+
+    try:
+        # 故意易受注入攻击
+        query = f"SELECT * FROM blind_data WHERE session_id = '{injected}'"
+        cur.execute(query)
+        result = cur.fetchone()
+    except Exception as e:
+        return {"error": str(e)}, 500
+    finally:
+        cur.close()
+        conn.close()
+
+    if result:
+        return {
+            "message": "Success!",
+            "flag": result[1]
+        }
+    else:
+        return {
+            "message": "No result"
+        }, 404
 
 
 if __name__ == '__main__':

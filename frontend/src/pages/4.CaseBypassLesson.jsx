@@ -96,7 +96,7 @@ const CaseBypassLesson = () => {
         I hide my flag in the secret inside my session_table.</p>
         <Link to="/bypass-simulator">
           <button className="bg-purple-600 text-white font-bold px-4 py-2 rounded">
-            Try Case Bypass
+            Try it Yourself
           </button>
         </Link>
 
