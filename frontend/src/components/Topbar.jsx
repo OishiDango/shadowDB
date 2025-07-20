@@ -18,7 +18,7 @@ const Topbar = () => {
         boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
       }}
     >
-      {/* 左邊 logo（用 scale 放大） */}
+      {/* 左邊 logo */}
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <Link to="/">
           <img
@@ -40,21 +40,8 @@ const Topbar = () => {
         <Link to="/intro" style={{ color: '#222' }}>iSQL Tutorial</Link>
       </div>
 
-      {/* 右側按鈕 */}
-      <div>
-        <button
-          style={{
-            backgroundColor: '#2F88FF',
-            color: 'white',
-            border: 'none',
-            padding: '8px 16px',
-            borderRadius: '5px',
-            fontWeight: 'bold',
-          }}
-        >
-          Login
-        </button>
-      </div>
+      {/* 右側占位符 */}
+      <div style={{ width: '80px' }} /> {/* same width as login button would be */}
     </div>
   );
 };

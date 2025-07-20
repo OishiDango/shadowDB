@@ -29,19 +29,19 @@ const Sidebar = () => {
       zIndex: 1000
     }}>
 
-      <h2 style={{ color: '#222', marginBottom: '1.5rem' }}>iSQL Tutorial</h2>
+      <h2 style={{ color: '#222', marginBottom: '1.5rem' }}>SQLi Tutorial</h2>
       <nav>
-        <Link to="/" style={linkStyle('/')}>iSQL Home</Link>
-        <Link to="/intro" style={linkStyle('/intro')}>iSQL Intro</Link>
+        <Link to="/" style={linkStyle('/')}>SQLi Home</Link>
+        <Link to="/intro" style={linkStyle('/intro')}>SQLi Intro</Link>
         <Link to="/query-simulate" style={linkStyle('/query-simulate')}>Query Simulator</Link>
-        <Link to="/login-bypass" style={linkStyle('/login-bypass')}>iSQL Login By Pass</Link>
-        <Link to="/union-injection" style={linkStyle('/union-injection')}>iSQL UNION</Link>
-        <Link to="/information-schema" style={linkStyle('/information-schema')}>iSQL Info Scheme</Link>
-        <Link to="/case-bypass" style={linkStyle('/case-bypass')}>iSQL Filter Bypass</Link>
+        <Link to="/login-bypass" style={linkStyle('/login-bypass')}>SQLi Login By Pass</Link>
+        <Link to="/union-injection" style={linkStyle('/union-injection')}>SQLi UNION</Link>
+        <Link to="/information-schema" style={linkStyle('/information-schema')}>SQLi Info Scheme</Link>
+        <Link to="/case-bypass" style={linkStyle('/case-bypass')}>SQLi Filter Bypass</Link>
         <Link to="/blind-intro" style={linkStyle('/blind-intro')}>Blind SQLi Introduction</Link>
-        <Link to="/blind/error-based" style={linkStyle('/blind/error-based')}>iSQL Error-based</Link>
-        <Link to="/blind/time-based" style={linkStyle('/blind/time-based')}>iSQL Time-based </Link>
-        <Link to="/sql-defense" style={linkStyle('/sql-defense')}>iSQL Defense</Link>
+        <Link to="/blind/error-based" style={linkStyle('/blind/error-based')}>SQLi Error-based</Link>
+        <Link to="/blind/time-based" style={linkStyle('/blind/time-based')}>SQLi Time-based </Link>
+        <Link to="/sql-defense" style={linkStyle('/sql-defense')}>SQLi Defense</Link>
       </nav>
     </div>
   );
