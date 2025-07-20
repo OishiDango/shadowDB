@@ -131,7 +131,7 @@ const ErrorBasedLesson = () => {
           There is a table called:
         </p>
         <SyntaxHighlighter language="sql" style={vscDarkPlus}>
-          {"account_data(user_login, pass_key)"}
+          {"blind_data (id, session_id, data)"}
         </SyntaxHighlighter>
         <Link to="/blind/error-based-simulator">
           <button className="mt-4 bg-purple-600 text-white font-bold px-4 py-2 rounded">

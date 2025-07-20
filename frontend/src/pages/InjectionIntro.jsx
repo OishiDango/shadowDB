@@ -12,13 +12,12 @@ const InjectionIntro = () => (
 
     <section className="mb-8">
       <p className="text-base mb-4">
-        <strong>SQL Injection (SQLi)</strong> is a classic attack technique used to <strong>gain unauthorized access or extract data</strong> from a database.
-        <br />
-        It works by entering specially crafted <strong>SQL code</strong> into input fields like <em>textboxes, URLs, or forms</em> to trick the backend system into executing unintended commands.
+        <strong>SQL Injection (SQLi)</strong> is one of the classic cybersecurity attacks to gain unauthorised access or gain information from a database. 
+        It works by entering a SQL query into input fields like textboxes and tricking the webpage's back end to run our designed query on their database. 
       </p>
 
       <p className="text-base mb-4">
-        If the backend doesn't properly filter this input, the SQL command can be manipulated.
+        If the backend is not well designed, the SQL command can be manipulated.
       </p>
 
       <h2 className="text-2xl font-semibold mb-2">🔓 Example</h2>

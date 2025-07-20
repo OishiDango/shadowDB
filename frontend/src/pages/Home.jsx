@@ -11,8 +11,10 @@ const Home = () => (
     <section className="mb-6">
       <h2 className="text-xl font-semibold mb-2">🧠 Prerequisites</h2>
       <p>
-        In this course, we assume you already have <strong>basic knowledge of SQL</strong>. <br />
-        I will briefly review relevant SQL concepts as they come up, but you should be familiar with the basics before proceeding.
+        Hello, welcome to the iSQL course. I'm Jian Hao, the writer of this website. 
+<br />
+In this course ,we will assume you have basic knowledge of SQL., I will mention how SQL queries work when they come up, but it's recommended that you prepare your notes for SQL queries.
+
       </p>
     </section>
 

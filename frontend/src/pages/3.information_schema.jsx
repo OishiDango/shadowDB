@@ -17,9 +17,10 @@ const InformationSchemaLesson = () => {
 
       <section className="mb-8">
         <p className="text-base mb-4">
-            To extract data using SQL injection, you need to know <strong>which tables and columns exist</strong> in the database.
-             <br />
-            Even if the application hides them, <strong>databases often expose this information through metadata tables</strong> — especially via a special system schema called <code>information_schema</code>.
+            To extract data using SQL injection, you need to know <strong>the detail about tables and columns, such as their name</strong>.
+            <br />
+            Even you don't have any information about them, <strong>databases usually stored this information in metadata tables</strong> — and you can obtain them through special system schema called <code>information_schema</code>.
+
         </p>
 
 

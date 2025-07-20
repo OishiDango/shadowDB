@@ -18,8 +18,7 @@ const UnionInjection = () => {
 
       <section className="mb-8">
         <p className="text-base mb-4">
-          SQL Injection can also be used to extract hidden data by using the <code>UNION</code> keyword to join multiple queries.
-          This allows attackers to retrieve data from other tables — even if the original query wasn't meant to show it.
+          You can use UNION keyword to join multiple queries to extract hidden data. This allow users to obtain data from other tables, even the data shouldn't be show.
         </p>
 
         <h2 className="text-2xl font-semibold mb-2">💡 Syntax</h2>
