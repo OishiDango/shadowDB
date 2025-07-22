@@ -31,12 +31,11 @@ function App() {
       }}>
         <Sidebar />
 
-        {/* 主內容區域撐滿，加上 paddingTop 來避開 topbar */}
         <div style={{
           marginLeft: '240px',
           flex: 1,
           padding: '1.5rem 3rem',
-          paddingTop: '60px', // 👈 這行是關鍵，避免被 topbar 擋住
+          paddingTop: '60px',
         }}>
           <Routes>
             <Route path="/" element={<Home />} />

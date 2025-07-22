@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import HintBar from "../components/HintBar";
-import BACKEND_URL from "../config"; // 引入配置文件中的后端地址
+import BACKEND_URL from "../config"; 
 
 const InformationSimulatorPage = () => {
   const [username, setUsername] = useState('');

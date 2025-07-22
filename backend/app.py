@@ -81,7 +81,6 @@ def info_login():
     cur = conn.cursor()
 
     try:
-        # 这里故意使用易受 SQL 注入攻击的方式
         query = f"SELECT * FROM hidden_users WHERE username = '{username}' AND password = '{password}'"
         cur.execute(query)
         result = cur.fetchone()
@@ -118,7 +117,6 @@ def get_secrets():
     data = request.get_json()
     session_id = data.get('sessionId')
 
-    # 检查是否包含 SQL keyword 且是全小写或全大写
     keywords = ['select', 'union', 'from', 'where']
     for keyword in keywords:
         matches = re.findall(rf"\b{keyword}\b", session_id, re.IGNORECASE)
@@ -126,7 +124,6 @@ def get_secrets():
             if m.islower() or m.isupper():
                 return {"error": "Blocked: keyword must use mixed casing!"}, 403
 
-    # SQL 查询（不安全，仅供练习）
     conn = get_connection()
     cur = conn.cursor()
     try:
@@ -201,7 +198,6 @@ def blind_time_login():
         conn = get_connection()
         cur = conn.cursor()
 
-        # 🛡️ 用拼接方式模拟注入（仅用于教学！请勿用于真实环境）
         query = f"""
         SELECT CASE
             WHEN EXISTS (

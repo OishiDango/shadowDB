@@ -18,7 +18,7 @@ const UnionInjection = () => {
 
       <section className="mb-8">
         <p className="text-base mb-4">
-          You can use UNION keyword to join multiple queries to extract hidden data. This allow users to obtain data from other tables, even the data shouldn't be show.
+          You can use <code>UNION</code> keyword to join multiple queries to extract hidden data. This allow users to obtain data from other tables, even the data shouldn't be show.
         </p>
 
         <h2 className="text-2xl font-semibold mb-2">💡 Syntax</h2>

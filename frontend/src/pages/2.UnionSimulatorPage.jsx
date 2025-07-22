@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import HintBar from "../components/HintBar";
-import BACKEND_URL from "../config"; // 引入配置文件中的后端地址
+import BACKEND_URL from "../config"; 
 
 const UnionSimulatorPage = () => {
   const [username, setUsername] = useState('');
@@ -102,7 +102,7 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    gap: "20px", // 控制卡片和 hint 的間距
+    gap: "20px", 
   },
 
   background: {

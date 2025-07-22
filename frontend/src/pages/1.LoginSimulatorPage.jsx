@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import BACKEND_URL from "../config"; // 引入配置文件中的后端地址
+import BACKEND_URL from "../config"; 
 
 const LoginBox = () => {
   const [username, setUsername] = useState('');
