@@ -4,7 +4,6 @@ import Home from './pages/Home';
 import InjectionIntro from './pages/InjectionIntro';
 import LoginBypass from './pages/1.LoginBypass';
 import Topbar from './components/Topbar';
-import Track from './pages/Track';
 import QuerySimulator from './pages/QuerySimulator';
 import UnionInjection from './pages/2.UnionInjection';
 import InformationSchema from './pages/3.information_schema';
@@ -42,7 +41,6 @@ function App() {
             <Route path="/shadowDB" element={<Home />} />
             <Route path="/intro" element={<InjectionIntro />} />
             <Route path="/login-bypass" element={<LoginBypass />} />
-            <Route path="/track" element={<Track />} />
             <Route path="/query-simulate" element={<QuerySimulator />} />
             <Route path="/union-injection" element={<UnionInjection />} />
             <Route path="/case-bypass" element={<CaseBypassLesson />} />

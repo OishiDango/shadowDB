@@ -36,7 +36,7 @@ In this course ,we will assume you have basic knowledge of SQL., I will mention 
         design, and run commands which can lead to:
       </p>
       <ul className="list-disc ml-6 mt-2">
-        <li>Gaining unauthorized access (e.g., logging in as admin)</li>
+        <li>Gaining unauthorized access</li>
         <li>Viewing or modifying sensitive data</li>
         <li>Running database commands that shouldn't be allowed</li>
       </ul>
