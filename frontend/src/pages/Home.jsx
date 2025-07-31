@@ -6,12 +6,12 @@ import { Link } from 'react-router-dom';
 
 const Home = () => (
   <div className="p-6">
-    <h1 className="text-2xl font-bold mb-4">📘 Welcome to the iSQL Training</h1>
+    <h1 className="text-2xl font-bold mb-4">📘 Welcome to the SQLi Training</h1>
 
     <section className="mb-6">
       <h2 className="text-xl font-semibold mb-2">🧠 Prerequisites</h2>
       <p>
-        Hello, welcome to the iSQL course. I'm Jian Hao, the writer of this website. 
+        Hello, welcome to the SQLi course. I'm Jian Hao, the writer of this website. 
 <br />
 In this course ,we will assume you have basic knowledge of SQL., I will mention how SQL queries work when they come up, but it's recommended that you prepare your notes for SQL queries.
 
